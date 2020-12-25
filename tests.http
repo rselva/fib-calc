@@ -1,0 +1,18 @@
+POST http://localhost:5000/values
+Content-Type: application/json
+
+{
+    "index":3
+}
+
+###
+GET http://localhost:5000/values/current
+
+###
+GET http://localhost:5000/values/all
+
+###
+GET http://localhost:5000/
+
+###
+
