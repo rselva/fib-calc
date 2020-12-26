@@ -18,16 +18,15 @@ after_success:
   - docker push rselva/fib-calc-nginx
   - docker push rselva/fib-calc-server
   - docker push rselva/fib-calc-worker
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-1"
-#   app: "docker-react"
-#   env: "DockerReact-env"
-#   bucket_name: "elasticbeanstalk-us-east-1-691255507802"
-#   bucket_path: "docker-react"
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key: $AWS_SECRET_KEY
-#     script:
-#       - docker run -e CI=true USERNAME/react-test npm test
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'fib-calc'
+  env: 'FibCalc-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-691255507802'
+  bucket_path: 'fib-calc'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
